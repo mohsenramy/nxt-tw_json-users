@@ -1,27 +1,70 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(242, 240, 240);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.container {
+  @apply w-full p-4 rounded-md bg-white;
+}
+.head_text {
+  @apply mt-5 text-5xl font-bold leading-[1.15] text-black sm:text-6xl;
+}
+
+.desc {
+  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+}
+
+.button_main {
+  @apply rounded-md border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center font-inter flex items-center justify-center;
+}
+
+.button_outline {
+  @apply rounded-md border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}
+
+.nav_link{
+  @apply rounded-md bg-transparent py-1.5 px-3 text-black transition-all hover:bg-black hover:text-white text-center flex items-center justify-center;
+}
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+.user-card{
+  @apply flex-col justify-around shadow-md border border-gray-200 rounded-md p-4 mt-10 text-lg
+}
+.user-card-column{
+  @apply text-xl font-semibold border-b p-2 mx-2 bg-gray-300
 }
