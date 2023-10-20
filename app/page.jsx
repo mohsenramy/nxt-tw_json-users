@@ -1,8 +1,6 @@
-import Link from "next/link";
-
-export default async function Home() {
+export default function Home() {
   return (
-    <section className="w-full flex-center flex-col">
+    <div className="w-full flex-center flex-col">
       <h1 className="head_text text-center"> Home Page</h1>
       <p className="desc text-center">
         This is the implementation for a small app using data from
@@ -18,6 +16,6 @@ export default async function Home() {
           link
         </a>
       </p>
-    </section>
+    </div>
   );
 }

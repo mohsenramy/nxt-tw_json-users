@@ -4,7 +4,11 @@ export async function getUsers() {
     throw new Error("Failed to fetch data");
   }
 
-  return res.json();
+  try {
+    return await res.json();
+  } catch (error) {
+    throw new Error("Invalid data");
+  }
 }
 export async function getUserDetails(userId) {
   const res = await fetch(`${process.env.API_URL}/users/${userId}`);
@@ -13,5 +17,9 @@ export async function getUserDetails(userId) {
     return null;
   }
 
-  return res.json();
+  try {
+    return await res.json();
+  } catch (error) {
+    return null;
+  }
 }

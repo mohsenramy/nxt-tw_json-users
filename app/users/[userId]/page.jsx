@@ -1,13 +1,14 @@
-import { getUserDetails } from "@services/users";
+import { getUserDetails } from "@/services/users";
 import Link from "next/link";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineUser, AiOutlinePhone } from "react-icons/ai";
 export async function generateMetadata({ params }) {
   const user = await getUserDetails(params?.userId);
 
-  if (!user.name) {
+  if (!user?.name) {
     return {
       title: "User Not Found",
+      description: "",
     };
   }
 

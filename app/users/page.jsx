@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getUsers } from "@services/users";
+import { getUsers } from "@/services/users";
 
 export const metadata = {
   title: "Users List",
